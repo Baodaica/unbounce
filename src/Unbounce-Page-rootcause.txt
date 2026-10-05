@@ -1,0 +1,8 @@
+            // Written with autoload off. This runs on the public proxy path, so
+            // during an upstream outage it is rewritten often -- the message
+            // embeds the request URL, so update_option's unchanged-value
+            // short-circuit rarely applies. Keeping it out of the autoloaded
+            // set means those writes stop invalidating the alloptions cache on
+            // every request.
+            update_option(UBConfig::UB_PROXY_ERROR_MESSAGE_KEY, $message, false);
+        }
